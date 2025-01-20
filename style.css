@@ -1,16 +1,71 @@
-/* Diagnostic Styling */
-* {
-  outline: 2px dotted gray;
-} 
+/* wanted to do three separate animations; one for the 'fingers', one for the whole paw, 
+and one for having everything show up individually. 
+the idea was from adding classes to the parts. But the animations do not want to work with me. 
+Also, layering animations seems to cancel out each other, I do not know how to fix it yet.*/
 
-/* temp background color */
-body {
-    background: lightgray;
-}
+svg {
+  scale: 6;
+  background: darkgreen;
+  stroke: limegreen;
+  stroke-width: 1;
   
-/* vertical and horizontal centering */
-body {
+  animation-duration: 1.25s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-direction: forwards;
+  
+  transition: color, background 1s;
+}
+
+svg:active {
+   background: blueviolet;
+  stroke: #3b9aff;
+  animation-name: bounceInDown;
+  
+/*   animation orders: NAME , DURATION, DELAY */
+  animation:sayHi 1s 6.25s;
+}
+
+/* keyframe animation */
+
+@keyframes sayHi {
+  
+/*   first versus 0% */
+ 0% {
+    rotate: 0deg;
+  }
+  
+  25% {
+    rotate: 15deg;
+  }
+  
+/*   middle versus 50% */
+  50% {
+rotate: -10deg;
+  }
+  
+/*   last versus 100% */
+  100% {
+    rotate: 0deg;
+  }
+}
+
+
+/* .middle {
+  animation-delay: 2s;
+}
+
+.bottom {
+  animation-delay: 3s;
+} */
+
+
+body{
   display: grid;
   place-content: center;
-  height: 100vh;
+  height:100vh;
 }
+
+/* * {
+  outline: .5px solid rgba(255, 145, 0, 0.952);
+} */
